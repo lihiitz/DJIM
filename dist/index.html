@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f897e93078.js" crossorigin="anonymous"></script>
+    <title>DJ</title>
+</head>
+
+
+<div id="container">
+
+
+    <div id="content">
+
+        <div class="video parent">
+            <video controls id="webcam" autoplay width="690" height="460"></video>
+            <video id="vid2" controls></video>
+            
+            <div class="child" id="hotSpots">
+
+                <div class="drum soundBox">
+                    <audio src='./sounds/bubbles.mp3'></audio><i class="fas fa-drum"></i>
+                </div>
+    
+                <div class="guitar soundBox">
+                    <audio src='./sounds/clay.mp3'></audio><i class="fas fa-guitar"></i>
+                </div>
+    
+                <div class="cat soundBox">
+                    <audio src='./sounds/confetti.mp3'></audio><i class="fas fa-cat"></i>
+                </div>
+    
+                <div class="bird soundBox">
+                    <audio src='./sounds/glimmer.mp3'></audio><i class="fas fa-kiwi-bird"></i>
+                </div>
+    
+                <div class="up soundBox">
+                    <audio src='./sounds/lake-birds.mp3'></audio><i class="fas fa-arrow-up"></i>
+                </div>
+    
+                <div class="down soundBox">
+                    <audio src='./sounds/laughing-monster.mp3'></audio><i class="fas fa-arrow-down"></i>
+                </div>
+    
+                <div class="human soundBox">
+                    <audio src='./sounds/moon.mp3'></audio><i class="fas fa-child"></i>
+                </div>
+    
+                <div class="dizzy soundBox">
+                    <audio src='./sounds/ufo.mp3'></audio><i class="far fa-dizzy"></i>
+                </div>
+    
+                <div class="disease soundBox">
+                    <audio src='./sounds/whistle-crash.mp3'></audio><i class="fas fa-disease"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <video id="video-demo" controls="controls" poster="videos/jsdetection.jpg" width="640" height="480"
+            onclick="if(/Android/.test(navigator.userAgent))this.play();">
+            <source src="videos/jsdetection.mp4" type="video/mp4" />
+            <source src="videos/jsdetection.ogg" type="video/ogg" />
+            <source src="videos/jsdetection.webm" type="video/webm" />
+            Your browser doesn't support the HTML5 video tag.
+        </video>
+
+        <canvas id="canvas-source" width="640" height="480"></canvas>
+        <canvas id="canvas-highlights" width="640" height="480"></canvas>
+        <canvas id="canvas-blended" width="640" height="480"></canvas>
+
+    </div>
+
+    <div class="loading">Loading...</div>
+    
+</div>
+
+<div class="rock">You're the DJ, Rock On!</div>
+<img class="im img" src="https://i.gifer.com/5Si.gif"  width="300" height="150">
+<img class="im img2" src="https://www.askideas.com/media/36/Old-Man-Crazy-Dancing-Funny-Gif-Image.gif"  width="300" height="150">
+<img class="im img3" src="https://media2.giphy.com/media/26gYOXsPBh3qv420E/giphy.gif?cid=ecf05e4791a4e45f8f1d4ce1a61c88985c0d72a568889d6a&rid=giphy.gif"  width="300" height="150">
+<img class="im img4" src="https://media2.giphy.com/media/eNpXWzGIMRjIo4lXT8/giphy.gif?cid=ecf05e4789eaf0724def1ad3c91461d2f05d6685795af967&rid=giphy.gif"  width="300" height="150">
+
+
+<footer>
+    <div class="buttons">
+        <button class="btn btn2" onClick="spin()">Start Recording</button>
+        <button class="btn btn4" onClick="none()">Stop Recording </button>
+        <button class="btn btn3">PARTY</button>
+        <select id="drop-down">
+            <script id="songs-template" type="text/x-handlebars-template">
+                <option class="user" data-id="{{name}}">{{name}}</option>
+            </script>
+        </select>
+        <div class="spin"></div>
+    </div>
+</footer>
+
+<script src="./handlebars/dist/handlebars.js"></script>
+<script src="./jquery/dist/jquery.js"></script>
+<script src="./app.js"></script>
+<script src="./motion.js"></script>
+<script src="./tone/build/Tone.js"></script>
+<script src="sound.js"></script>
+<script src="logic.js"></script>
+<script src="main.js"></script>
+
+</body>
+
+</html>
